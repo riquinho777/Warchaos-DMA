@@ -1,0 +1,13 @@
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.log
+*.dmp
+*.dat
+*.ini
+.vs/
+logs/
+app/*
+!app/.gitkeep

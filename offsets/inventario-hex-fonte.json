@@ -1,0 +1,876 @@
+{
+  "note": "Inventario mecanico completo dos literais hex dos arquivos ativos de leitura/projecao. Inclui mascaras, limites e tamanhos que nao sao offsets. Nao inclui cores da UI nem codigo de diagnostico historico separado.",
+  "files": [
+    "esp-prototipo.cpp",
+    "dma-head.hpp",
+    "collision-head.hpp",
+    "collision-ray.hpp",
+    "visibility.hpp",
+    "health.hpp",
+    "team-policy.hpp",
+    "radar.hpp",
+    "projection.hpp"
+  ],
+  "occurrences": [
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 131,
+      "hex_literals": [
+        "0x164F50",
+        "0xD8",
+        "0x48"
+      ],
+      "context": "bool environment(QWORD& system,QWORD& renderer){QWORD env=0;return pointer(entityBase+0x164F50,env)&&pointer(env+0xD8,system)&&pointer(env+0x48,renderer);}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 135,
+      "hex_literals": [
+        "0x164F50",
+        "0xC8",
+        "0x48",
+        "0x4E0"
+      ],
+      "context": "if(!actionBase||!pointer(entityBase+0x164F50,env)||!pointer(env+0xC8,game)||!pointer(game+0x48,framework)||!pointer(framework+0x4E0,system)||"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 136,
+      "hex_literals": [
+        "0x4F0368",
+        "0x78",
+        "0x59340",
+        "0x30"
+      ],
+      "context": "!pointer(system,table)||table!=actionBase+0x4F0368||!bytes(table+0x78,&method,8)||method!=actionBase+0x59340||!pointer(system+0x30,header)||!pointer(header+8,root))return result;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 139,
+      "hex_literals": [
+        "0x30",
+        "0x19"
+      ],
+      "context": "BYTE record[0x30]={};if(!bytes(node,record,sizeof(record)))return {};if(record[0x19])continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 140,
+      "hex_literals": [
+        "0x10",
+        "0x20",
+        "0x28"
+      ],
+      "context": "QWORD left=0,right=0,actor=0,vt=0,health=0;DWORD id=0;std::memcpy(&left,record,8);std::memcpy(&right,record+0x10,8);std::memcpy(&id,record+0x20,4);std::memcpy(&actor,record+0x28,8);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 142,
+      "hex_literals": [
+        "0xD8",
+        "0x219A40"
+      ],
+      "context": "if(pointer(actor,vt)&&bytes(vt+0xD8,&health,8)&&health==gameBase+0x219A40)result[id]={actor,node,vt};"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 148,
+      "hex_literals": [
+        "0x130"
+      ],
+      "context": "const auto& list=*found->second.body;const auto& first=list.front();QWORD physical=0;std::array<BYTE,0x130> header{};"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 149,
+      "hex_literals": [
+        "0xB38",
+        "0x130"
+      ],
+      "context": "if(pointer(head.character+0xB38,physical)&&physical==first.physical&&bytes(physical,header.data(),0x130)&&"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 150,
+      "hex_literals": [
+        "0x120"
+      ],
+      "context": "collisionHead::field<QWORD>(header.data(),0)==first.physicalTable&&collisionHead::field<QWORD>(header.data(),0x120)==first.parts&&"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 151,
+      "hex_literals": [
+        "0x128"
+      ],
+      "context": "collisionHead::field<int>(header.data(),0x128)==found->second.count&&found->second.count>0&&found->second.count<=128){"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 152,
+      "hex_literals": [
+        "0x88"
+      ],
+      "context": "std::vector<BYTE> records(static_cast<size_t>(found->second.count)*0x88);bool same=bytes(first.parts,records.data(),static_cast<DWORD>(records.size()));"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 153,
+      "hex_literals": [
+        "0x88"
+      ],
+      "context": "for(const auto& g:list){if(g.index>=static_cast<DWORD>(found->second.count)){same=false;break;}const BYTE* part=records.data()+g.index*0x88;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 154,
+      "hex_literals": [
+        "0x48",
+        "0x38"
+      ],
+      "context": "if(collisionHead::field<DWORD>(part,0x48)!=g.joint||collisionHead::field<QWORD>(part,0x38)!=g.descriptor){same=false;break;}}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 165,
+      "hex_literals": [
+        "0x128"
+      ],
+      "context": "if(!result->empty()&&bytes(result->front().physical+0x128,&count,4)&&count>0&&count<=128)collisionLayouts[id]={head.character,count,result};else collisionLayouts.erase(id);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 175,
+      "hex_literals": [
+        "0xC0",
+        "0x40136"
+      ],
+      "context": "if(!pointer(system+0xC0,table)||!bytes(system+0x40136,&last,2))return result;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 177,
+      "hex_literals": [
+        "0xFFFF"
+      ],
+      "context": "const DWORD expectedId=actor->first;const DWORD index=expectedId&0xFFFF;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 181,
+      "hex_literals": [
+        "0x18"
+      ],
+      "context": "std::memcpy(&id,h+0x18,4);if(id!=expectedId)continue;++actorEntities;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 182,
+      "hex_literals": [
+        "0xB0",
+        "0xC",
+        "0x40",
+        "0xB8"
+      ],
+      "context": "std::memcpy(&proxy,h+0xB0,8);if(h[0xC]&0x40){int count=0;std::memcpy(&count,h+0xB8,4);if(count<1||!pointer(proxy,proxy))continue;}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 183,
+      "hex_literals": [
+        "0xA8"
+      ],
+      "context": "if(!plausiblePointer(proxy))continue;BYTE proxyHeader[0xA8]={};if(!bytes(proxy,proxyHeader,sizeof(proxyHeader)))continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 184,
+      "hex_literals": [
+        "0x50"
+      ],
+      "context": "QWORD owner=0,vt=0;std::memcpy(&owner,proxyHeader+0x50,8);std::memcpy(&vt,proxyHeader,8);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 185,
+      "hex_literals": [
+        "0x110580"
+      ],
+      "context": "if(owner!=entity||vt!=entityBase+0x110580){++proxyRejected;continue;}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 188,
+      "hex_literals": [
+        "0x27AEF8"
+      ],
+      "context": "QWORD characterTable=0;if(!bytes(head.character,&characterTable,8)||characterTable!=animationBase+0x27AEF8)continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 190,
+      "hex_literals": [
+        "0xE8"
+      ],
+      "context": "std::memcpy(&namePointer,h+0xE8,8);char name[97]={};if(!namePointer||!bytes(namePointer,name,96)){++nameRejected;continue;}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 195,
+      "hex_literals": [
+        "0x40"
+      ],
+      "context": "if(!duplicate){QWORD temp=0;pointer(proxy+0x40,temp);result.push_back({entity,proxy,id,head,name,temp,actor->second.object,actor->second.node,actor->second.table});bool reused=false;result.back().body=collisionLayout(head,id,reused);if(reused)++collisionReused;else ++collisionNew;for(const auto& g:*result.back().body)if(g.joint==head.joint)result.back().collision=g;}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 206,
+      "hex_literals": [
+        "0x3D6648",
+        "0x9360"
+      ],
+      "context": "QWORD vt=0,thread=0;if(!bytes(renderer,&vt,8)||vt!=rendererBase+0x3D6648||!pointer(renderer+0x9360,thread))return false;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 207,
+      "hex_literals": [
+        "0x28"
+      ],
+      "context": "if(!bytes(thread+0x28,output.order,8))return false;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 208,
+      "hex_literals": [
+        "0x28"
+      ],
+      "context": "prepare(batch,thread+0x28,8,reinterpret_cast<PBYTE>(output.sampledOrder),&output.orderBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 209,
+      "hex_literals": [
+        "0x98C0"
+      ],
+      "context": "prepare(batch,renderer+0x98C0,16,reinterpret_cast<PBYTE>(output.viewport.data()),&output.viewportBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 212,
+      "hex_literals": [
+        "0x318",
+        "0xE98",
+        "0x318",
+        "0xEA0"
+      ],
+      "context": "if(!pointer(renderer+index*0x318+0xE98,item.firstStack)||!pointer(item.firstStack,item.first)||!pointer(renderer+index*0x318+0xEA0,item.secondStack)||!pointer(item.secondStack,item.second))continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 221,
+      "hex_literals": [
+        "0x2C"
+      ],
+      "context": "// Prefer the render-thread path (+0x2C), then the alternate perspective lane."
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 231,
+      "hex_literals": [
+        "0x164F50",
+        "0xC8",
+        "0x48",
+        "0x790"
+      ],
+      "context": "if(!gameBase||!pointer(entityBase+0x164F50,env)||!pointer(env+0xC8,game)||!pointer(game+0x48,framework)||!pointer(framework+0x790,rules)||"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 232,
+      "hex_literals": [
+        "0xBCDF98",
+        "0x368",
+        "0x595810",
+        "0x110"
+      ],
+      "context": "!bytes(rules,&vt,8)||vt!=gameBase+0xBCDF98||!bytes(vt+0x368,&method,8)||method!=gameBase+0x595810||!pointer(rules+0x110,header)||!pointer(header+8,root))return result;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 235,
+      "hex_literals": [
+        "0x28"
+      ],
+      "context": "struct TeamNode{std::array<BYTE,0x28> data{};DWORD count=0;};std::vector<TeamNode> records(pending.size());"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 237,
+      "hex_literals": [
+        "0x28"
+      ],
+      "context": "for(size_t i=0;i<pending.size();++i)prepare(batch,pending[i],0x28,records[i].data.data(),&records[i].count);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 240,
+      "hex_literals": [
+        "0x28",
+        "0x19"
+      ],
+      "context": "for(size_t i=0;i<pending.size();++i){if(records[i].count!=0x28)return {};const auto* p=records[i].data.data();if(p[0x19])continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 241,
+      "hex_literals": [
+        "0x1C",
+        "0x20"
+      ],
+      "context": "DWORD id=0,team=0;QWORD left=0,right=0;std::memcpy(&id,p+0x1C,4);std::memcpy(&team,p+0x20,4);result[id]=team;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 242,
+      "hex_literals": [
+        "0x10"
+      ],
+      "context": "std::memcpy(&left,p,8);std::memcpy(&right,p+0x10,8);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 255,
+      "hex_literals": [
+        "0x68",
+        "0x30"
+      ],
+      "context": "struct Data{collisionHead::Sample collision;std::vector<collisionHead::Sample> body;std::array<BYTE,256> entity{};std::array<BYTE,0x68> actor{};std::array<BYTE,0x30> actorNode{};DWORD actorBytes=0,actorNodeBytes=0;std::array<float,7> head{},left{},right{};std::array<std::array<float,7>,17> bones{};std::array<DWORD,17> boneBytes{};QWORD poseArray=0,currentPose=0,temp=0,checkedTemp=0,renderTable=0;DWORD currentPoseBytes=0,visibilityFrames[2]={},tempBytes=0,checkedTempBytes=0,frameBytes=0,tableBytes=0;DWORD a=0,c=0,d=0,e=0,f=0;};"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 258,
+      "hex_literals": [
+        "0x40",
+        "0xB78"
+      ],
+      "context": "if(pointerBatch){for(size_t i=0;i<nodes.size();++i){if(isEnemy(nodes[i].id)){prepare(pointerBatch,nodes[i].proxy+0x40,8,reinterpret_cast<PBYTE>(&data[i].temp),&data[i].tempBytes);prepare(pointerBatch,nodes[i].head.character+0xB78,8,reinterpret_cast<PBYTE>(&data[i].currentPose),&data[i].currentPoseBytes);}}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 261,
+      "hex_literals": [
+        "0x3776D8"
+      ],
+      "context": "DWORD engineFrame=0,engineFrameBytes=0;if(engineBase)prepare(batch,engineBase+0x3776D8,4,reinterpret_cast<PBYTE>(&engineFrame),&engineFrameBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 265,
+      "hex_literals": [
+        "0xB78"
+      ],
+      "context": "prepare(batch,n.entity,256,d.entity.data(),&d.a);prepare(batch,poseAddress(n.head.address),28,reinterpret_cast<PBYTE>(d.head.data()),&d.c);prepare(batch,poseAddress(n.head.leftFoot),28,reinterpret_cast<PBYTE>(d.left.data()),&d.e);prepare(batch,poseAddress(n.head.rightFoot),28,reinterpret_cast<PBYTE>(d.right.data()),&d.f);prepare(batch,n.head.character+0xB78,8,reinterpret_cast<PBYTE>(&d.poseArray),&d.d);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 266,
+      "hex_literals": [
+        "0x68",
+        "0x30"
+      ],
+      "context": "prepare(batch,n.actor,0x68,d.actor.data(),&d.actorBytes);prepare(batch,n.actorNode,0x30,d.actorNode.data(),&d.actorNodeBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 268,
+      "hex_literals": [
+        "0x130"
+      ],
+      "context": "prepare(batch,n.collision.physical,0x130,d.collision.physical.data(),&d.collision.physicalBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 269,
+      "hex_literals": [
+        "0x88",
+        "0x88"
+      ],
+      "context": "prepare(batch,n.collision.parts+n.collision.index*0x88,0x88,d.collision.part.data(),&d.collision.partBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 270,
+      "hex_literals": [
+        "0xB38"
+      ],
+      "context": "prepare(batch,n.head.character+0xB38,8,reinterpret_cast<PBYTE>(&d.collision.checkedPhysical),&d.collision.pointerBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 273,
+      "hex_literals": [
+        "0x88",
+        "0x88"
+      ],
+      "context": "prepare(batch,g.parts+g.index*0x88,0x88,sample.part.data(),&sample.partBytes);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 277,
+      "hex_literals": [
+        "0x40",
+        "0x60"
+      ],
+      "context": "if(d.tempBytes==8&&plausiblePointer(d.temp)){prepare(batch,n.proxy+0x40,8,reinterpret_cast<PBYTE>(&d.checkedTemp),&d.checkedTempBytes);prepare(batch,n.proxy+8,8,reinterpret_cast<PBYTE>(&d.renderTable),&d.tableBytes);prepare(batch,d.temp+0x60,8,reinterpret_cast<PBYTE>(d.visibilityFrames),&d.frameBytes);}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 281,
+      "hex_literals": [
+        "0x3776D8"
+      ],
+      "context": "DWORD engineFrameAfter=0;const bool frameAfterOk=engineBase&&bytes(engineBase+0x3776D8,&engineFrameAfter,4);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 288,
+      "hex_literals": [
+        "0x18"
+      ],
+      "context": "DWORD id=0;std::memcpy(&id,d.entity.data()+0x18,4);if(id!=n.id)continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 290,
+      "hex_literals": [
+        "0x28",
+        "0x20"
+      ],
+      "context": "std::memcpy(&actorPointer,d.actorNode.data()+0x28,8);std::memcpy(&actorId,d.actorNode.data()+0x20,4);std::memcpy(&actorTable,d.actor.data(),8);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 291,
+      "hex_literals": [
+        "0x68",
+        "0x30",
+        "0x19"
+      ],
+      "context": "if(d.actorBytes!=0x68||d.actorNodeBytes!=0x30||d.actorNode[0x19]||actorPointer!=n.actor||actorId!=n.id||actorTable!=n.actorTable){++out.unknownLife;continue;}"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 292,
+      "hex_literals": [
+        "0x60",
+        "0x64"
+      ],
+      "context": "std::memcpy(&encoded,d.actor.data()+0x60,4);std::memcpy(&key,d.actor.data()+0x64,4);const auto life=decodeLife(encoded,key);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 294,
+      "hex_literals": [
+        "0x40"
+      ],
+      "context": "float m[12]={};std::memcpy(m,d.entity.data()+0x40,sizeof(m));"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 319,
+      "hex_literals": [
+        "0x110780"
+      ],
+      "context": "if(engineFrameBytes==4&&frameAfterOk&&d.tempBytes==8&&d.checkedTempBytes==8&&d.tableBytes==8&&d.frameBytes==8&&d.temp==d.checkedTemp&&d.renderTable==entityBase+0x110780)"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 509,
+      "hex_literals": [
+        "0x164F50",
+        "0xC8",
+        "0x48",
+        "0x4E0",
+        "0x78"
+      ],
+      "context": "if(reader.pointer(reader.entityBase+0x164F50,env)&&reader.pointer(env+0xC8,game)&&reader.pointer(game+0x48,framework)&&reader.pointer(framework+0x4E0,actors)&&reader.pointer(actors,table)&&reader.bytes(table+0x78,&method,8)){"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 511,
+      "hex_literals": [
+        "0x30"
+      ],
+      "context": "QWORD header=0,root=0;if(!reader.pointer(actors+0x30,header)||!reader.pointer(header+8,root))return 8;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 513,
+      "hex_literals": [
+        "0x30",
+        "0x19"
+      ],
+      "context": "for(size_t i=0;i<pending.size()&&i<128;++i){const QWORD address=pending[i];if(address==header||!visited.insert(address).second)continue;BYTE record[0x30]={};if(!reader.bytes(address,record,sizeof(record))||record[0x19])continue;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 514,
+      "hex_literals": [
+        "0x10",
+        "0x20",
+        "0x28"
+      ],
+      "context": "QWORD left=0,right=0,actor=0,vt=0,health=0;DWORD id=0;std::memcpy(&left,record,8);std::memcpy(&right,record+0x10,8);std::memcpy(&id,record+0x20,4);std::memcpy(&actor,record+0x28,8);"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 516,
+      "hex_literals": [
+        "0xD8"
+      ],
+      "context": "if(reader.pointer(actor,vt)&&reader.bytes(vt+0xD8,&health,8)){"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 518,
+      "hex_literals": [
+        "0x219A40",
+        "0x60"
+      ],
+      "context": "DWORD healthData[2]={};if(health==reader.gameBase+0x219A40&&reader.bytes(actor+0x60,healthData,8)){"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 532,
+      "hex_literals": [
+        "0x3776D8"
+      ],
+      "context": "DWORD currentFrame=0;if(!reader.engineBase||!reader.bytes(reader.engineBase+0x3776D8,&currentFrame,4))return 8;"
+    },
+    {
+      "file": "projeto/esp-prototipo.cpp",
+      "line": 535,
+      "hex_literals": [
+        "0x40",
+        "0x60"
+      ],
+      "context": "if(reader.bytes(n.proxy+8,&renderTable,8)&&reader.pointer(n.proxy+0x40,temp)&&reader.bytes(temp+0x60,ids,8))"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 13,
+      "hex_literals": [
+        "0x10000",
+        "0x0000800000000000"
+      ],
+      "context": "return value >= 0x10000 && value < 0x0000800000000000ULL && (value & 7) == 0;"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 37,
+      "hex_literals": [
+        "0x58",
+        "0x60"
+      ],
+      "context": "std::memcpy(&begin,proxyHeader+0x58,8);std::memcpy(&end,proxyHeader+0x60,8);"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 39,
+      "hex_literals": [
+        "0x78"
+      ],
+      "context": "!qword(slot+0x78,result.character) || !plausiblePointer(result.character) ||"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 40,
+      "hex_literals": [
+        "0xB58"
+      ],
+      "context": "!qword(result.character+0xB58,definition) || !plausiblePointer(definition) ||"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 41,
+      "hex_literals": [
+        "0x28"
+      ],
+      "context": "!fetch(definition+0x28,reinterpret_cast<PBYTE>(&count),4) || count==0 || count>1024 ||"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 42,
+      "hex_literals": [
+        "0x18"
+      ],
+      "context": "!qword(definition+0x18,joints) || !plausiblePointer(joints) ||"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 43,
+      "hex_literals": [
+        "0x3FFFFFFF"
+      ],
+      "context": "!fetch(joints-4,reinterpret_cast<PBYTE>(&stored),4) || (stored&0x3FFFFFFF)!=count ||"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 44,
+      "hex_literals": [
+        "0xB78"
+      ],
+      "context": "!qword(result.character+0xB78,result.array) || !plausiblePointer(result.array))return result;"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 52,
+      "hex_literals": [
+        "0x148"
+      ],
+      "context": "std::vector<BYTE> names(static_cast<size_t>(count)*0x148);"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 55,
+      "hex_literals": [
+        "0x148",
+        "0x130"
+      ],
+      "context": "QWORD pointer=0;std::memcpy(&pointer,names.data()+static_cast<size_t>(joint)*0x148+0x130,8);"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 57,
+      "hex_literals": [
+        "0x10000",
+        "0x0000800000000000"
+      ],
+      "context": "if(pointer>=0x10000 && pointer<0x0000800000000000ULL && fetch(pointer,reinterpret_cast<PBYTE>(name),95)) {"
+    },
+    {
+      "file": "projeto/dma-head.hpp",
+      "line": 58,
+      "hex_literals": [
+        "0x1C"
+      ],
+      "context": "const QWORD address=result.array+static_cast<QWORD>(joint)*0x1C;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 8,
+      "hex_literals": [
+        "0x130",
+        "0x88"
+      ],
+      "context": "struct Sample {std::array<BYTE,0x130> physical{};std::array<BYTE,0x88> part{};QWORD checkedPhysical=0,checkedShape=0;DWORD physicalBytes=0,partBytes=0,pointerBytes=0,shapeBytes=0;};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 14,
+      "hex_literals": [
+        "0xB38"
+      ],
+      "context": "Geometry result;if(!physicsBase)return result;QWORD physical=0;if(!read(character+0xB38,&physical,8)||!plausiblePointer(physical))return result;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 15,
+      "hex_literals": [
+        "0x130"
+      ],
+      "context": "BYTE header[0x130]={};if(!read(physical,header,sizeof(header)))return result;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 16,
+      "hex_literals": [
+        "0x120",
+        "0x128"
+      ],
+      "context": "const QWORD parts=field<QWORD>(header,0x120),vt=field<QWORD>(header,0);const int count=field<int>(header,0x128);"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 17,
+      "hex_literals": [
+        "0x3D3080"
+      ],
+      "context": "if(!plausiblePointer(parts)||vt<physicsBase||vt>=physicsBase+0x3D3080||count<1||count>128)return result;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 18,
+      "hex_literals": [
+        "0x88"
+      ],
+      "context": "std::vector<BYTE> records(static_cast<size_t>(count)*0x88);if(!read(parts,records.data(),static_cast<DWORD>(records.size())))return result;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 19,
+      "hex_literals": [
+        "0x88",
+        "0x48"
+      ],
+      "context": "for(int i=0;i<count;++i){const BYTE* part=records.data()+i*0x88;if(field<DWORD>(part,0x48)!=joint)continue;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 20,
+      "hex_literals": [
+        "0x38"
+      ],
+      "context": "const QWORD descriptor=field<QWORD>(part,0x38);QWORD shape=0;if(!plausiblePointer(descriptor)||!read(descriptor,&shape,8)||!plausiblePointer(shape))return {};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 21,
+      "hex_literals": [
+        "0x90"
+      ],
+      "context": "BYTE geometry[0x90]={};if(!read(shape,geometry,sizeof(geometry)))return {};const QWORD table=field<QWORD>(geometry,0);"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 23,
+      "hex_literals": [
+        "0x24CCA8",
+        "0x30",
+        "0x3C"
+      ],
+      "context": "if(table==physicsBase+0x24CCA8){result.type=4;std::memcpy(result.center.data(),geometry+0x30,12);const float radius=field<float>(geometry,0x3C);result.radius=radius;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 28,
+      "hex_literals": [
+        "0x24E770",
+        "0x60",
+        "0x80",
+        "0x84",
+        "0x58",
+        "0x40"
+      ],
+      "context": "}else if(table==physicsBase+0x24E770){result.type=1;const int stride=field<int>(geometry,0x60),triangles=field<int>(geometry,0x80),vertices=field<int>(geometry,0x84);const QWORD positions=field<QWORD>(geometry,0x58),indices=field<QWORD>(geometry,0x40);"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 37,
+      "hex_literals": [
+        "0x24DEA0",
+        "0x30",
+        "0x3C",
+        "0x48",
+        "0x4C"
+      ],
+      "context": "}else if(table==physicsBase+0x24DEA0){result.type=6;std::memcpy(result.center.data(),geometry+0x30,12);std::memcpy(result.axis.data(),geometry+0x3C,12);result.radius=field<float>(geometry,0x48);result.halfLength=field<float>(geometry,0x4C);"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 39,
+      "hex_literals": [
+        "0x24D6C0",
+        "0x30",
+        "0x54",
+        "0x58",
+        "0x64"
+      ],
+      "context": "}else if(table==physicsBase+0x24D6C0){result.type=0;std::memcpy(result.basis.data(),geometry+0x30,36);result.oriented=field<int>(geometry,0x54)!=0;std::memcpy(result.center.data(),geometry+0x58,12);std::memcpy(result.extents.data(),geometry+0x64,12);"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 46,
+      "hex_literals": [
+        "0xB38"
+      ],
+      "context": "QWORD physical=0;if(!read(character+0xB38,&physical,8)||!plausiblePointer(physical))return {};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 47,
+      "hex_literals": [
+        "0x130"
+      ],
+      "context": "std::array<BYTE,0x130> header{};if(!read(physical,header.data(),static_cast<DWORD>(header.size())))return {};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 48,
+      "hex_literals": [
+        "0x120",
+        "0x128"
+      ],
+      "context": "const QWORD parts=field<QWORD>(header.data(),0x120);const int count=field<int>(header.data(),0x128);if(!plausiblePointer(parts)||count<1||count>128)return {};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 49,
+      "hex_literals": [
+        "0x88"
+      ],
+      "context": "std::vector<BYTE> records(static_cast<size_t>(count)*0x88);if(!read(parts,records.data(),static_cast<DWORD>(records.size())))return {};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 50,
+      "hex_literals": [
+        "0xB38"
+      ],
+      "context": "auto cachedRead=[&](QWORD address,void* output,DWORD size){if(address==character+0xB38&&size==8){std::memcpy(output,&physical,8);return true;}if(address==physical&&size==header.size()){std::memcpy(output,header.data(),size);return true;}if(address==parts&&size==records.size()){std::memcpy(output,records.data(),size);return true;}return read(address,output,size);};"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 52,
+      "hex_literals": [
+        "0x88",
+        "0x48"
+      ],
+      "context": "for(int i=0;i<count;++i){const DWORD joint=field<DWORD>(records.data()+i*0x88,0x48);auto g=discover(cachedRead,character,joint,physicsBase);if(g.points.empty())continue;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 57,
+      "hex_literals": [
+        "0x130",
+        "0x88"
+      ],
+      "context": "return !g.points.empty()&&sample.physicalBytes==0x130&&sample.partBytes==0x88&&sample.pointerBytes==8&&sample.shapeBytes==8&&sample.checkedPhysical==g.physical&&sample.checkedShape==g.shape&&"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 58,
+      "hex_literals": [
+        "0x120",
+        "0x128"
+      ],
+      "context": "field<QWORD>(sample.physical.data(),0)==g.physicalTable&&field<QWORD>(sample.physical.data(),0x120)==g.parts&&field<int>(sample.physical.data(),0x128)>static_cast<int>(g.index)&&"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 59,
+      "hex_literals": [
+        "0x48",
+        "0x38"
+      ],
+      "context": "field<DWORD>(sample.part.data(),0x48)==g.joint&&field<QWORD>(sample.part.data(),0x38)==g.descriptor;"
+    },
+    {
+      "file": "projeto/collision-head.hpp",
+      "line": 61,
+      "hex_literals": [
+        "0xA8"
+      ],
+      "context": "inline bool transform(const Sample& s,V local,V& world){float entity[7]={},part[8]={};std::memcpy(entity,s.physical.data()+0xA8,sizeof(entity));std::memcpy(part,s.part.data(),sizeof(part));"
+    },
+    {
+      "file": "projeto/collision-ray.hpp",
+      "line": 30,
+      "hex_literals": [
+        "0xA8"
+      ],
+      "context": "inline bool toLocal(const collisionHead::Sample& s,V world,V& local){float e[7]={},p[8]={};std::memcpy(e,s.physical.data()+0xA8,sizeof(e));std::memcpy(p,s.part.data(),sizeof(p));if(!collisionHead::quaternion(e+3)||!collisionHead::quaternion(p+3)||!std::isfinite(p[7])||p[7]<=0||p[7]>10)return false;"
+    }
+  ]
+}
