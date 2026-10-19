@@ -1,4 +1,4 @@
-# Warchaos — código-fonte v39
+# Warchaos DMA — código-fonte v39
 
 Fontes do loader Windows (Dear ImGui / DirectX 11) e do aplicativo de leitura DMA com integração serial Ferrum, configurações e catálogo de offsets.
 
